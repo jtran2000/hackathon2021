@@ -1,8 +1,8 @@
 # Discord Chart
+This was created as a project for the hackathon SD Hacks 2021. More information can be found on it [here](https://devpost.com/software/327267). 
+This repository retains the front-end for displaying information collected by [this Discord bot](https://github.com/Sumadhwa13/teamtimtams/tree/master/bot).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
-
-## Development server
+## Development Server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 This will only work if you have disabled Same-origin-policy in your browser. For Chrome, instructions can be found [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome)
