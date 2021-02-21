@@ -49,6 +49,21 @@ export class AppComponent {
   }
 
   updateFilter(event) {
-
+    const val:string = event.target.value.toLowerCase();
+    const words:string[] = val.split(" ");
+    this.rows = [...data];
+    if (words.length===0) {
+      return;
+    }
+    const temp:any[] = data.filter(row => {
+        let match:boolean = true;
+        words.forEach(word=>{
+          if (row.firstName.toLowerCase().indexOf(word)<0 && row.lastName.toLowerCase().indexOf(word)<0) {
+            match = false;
+          }
+        });
+        return match;
+    });
+    this.rows = [...temp];
   }
 }

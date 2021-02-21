@@ -9,6 +9,7 @@
 }
 
 .chart-card {
+  margin-left:100px;
   width: 100%;
   display: flex !important;
   flex-direction: column !important;
@@ -21,3 +22,6 @@
   height: 705px;
 }
 
+mat-card-title{
+  text-align: center;
+}

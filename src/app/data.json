@@ -82,5 +82,11 @@
     "firstName": "Riley",
     "lastName": "Moore",
     "points": 0
+  },
+  {
+    "id": 15,
+    "firstName": "Richard",
+    "lastName": "Brown",
+    "points": 0
   }
 ]

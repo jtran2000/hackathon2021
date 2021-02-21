@@ -1,6 +1,7 @@
 <mat-grid-list cols="2" rowHeight="800px">
-  <mat-grid-tile>
+  <mat-grid-tile >
     <mat-card class="chart-card">
+      <mat-card-title >Top 5 Students</mat-card-title>
       <mat-card-content>
         <div class="chart-div">
           <ngx-charts-bar-vertical
@@ -23,9 +24,7 @@
   </mat-grid-tile>
   <mat-grid-tile>
     <mat-card class="table-card">
-      <mat-card-title style="text-align: center">
-        Leaderboard
-      </mat-card-title>
+      <mat-card-title >Leaderboard</mat-card-title>
       <mat-card-content>
         <mat-form-field  style="width:100%"><input matInput (keyup)="updateFilter($event)" placeholder="Search..."></mat-form-field>
         <ngx-datatable #table class='material' [columns]="columns" [columnMode]="'force'"
