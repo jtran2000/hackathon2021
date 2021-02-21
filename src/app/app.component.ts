@@ -2,10 +2,8 @@ import { Component, NgModule } from '@angular/core';
 //import { BrowserModule } from '@angular/platform-browser';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {DataService} from "./app.service";
-//
-// import { chartData } from './data';
 declare var require: any;
-const data: any = require('./data.json');
+const localData: any = require('./data2.json');
 const chartNum = 5;
 @Component({
   selector: 'app-root',
@@ -15,7 +13,6 @@ const chartNum = 5;
 })
 export class AppComponent {
   chartData: any[] = [];
-  serverData;
   processedRowData:any[] = [];
 
 
@@ -39,31 +36,55 @@ export class AppComponent {
   };
 
   constructor(private dataService: DataService) {
-/*    for (let i = 0; i < chartNum; i++) {
-      let currentStudent:any = data[i];
-      this.chartData.push({name:currentStudent.firstName + " " + currentStudent.lastName, value: currentStudent.chartData});
-    }*/
+    this.setUpDataFromServer();
+    //this.setUpLocalData();
+  }
 
-    this.dataService.getData().subscribe(response => {
-      this.serverData = response;
-      console.log(this.serverData);
+  private setUpDataFromServer() {
+    this.dataService.getServerData().subscribe(response => {
+      const serverData:any = response;
       for (let i = 0; i < chartNum; i++) {
-        let currentStudent:any = this.serverData[i];
+        let currentStudent: any = serverData[i];
         let temp = [];
-        this.chartData.push({name:currentStudent.firstname + " " + currentStudent.lastname, value: currentStudent.points});
+        this.chartData.push({
+          name: currentStudent.firstname + " " + currentStudent.lastname,
+          value: currentStudent.points
+        });
         this.chartData = [...this.chartData];
       }
-      this.serverData.forEach(user => {
-        this.processedRowData.push({rank:this.processedRowData.length + 1, firstName:user.firstname, lastName: user.lastname, points: user.points});
+      serverData.forEach(user => {
+        this.processedRowData.push({
+          rank: this.processedRowData.length + 1,
+          firstName: user.firstname,
+          lastName: user.lastname,
+          points: user.points
+        });
       });
       this.rows = [...this.processedRowData];
     });
-
-
-
-    //console.log(this.chartData);
-   //Object.assign(this, { chartData })
   }
+
+  private setUpLocalData() {
+      for (let i = 0; i < chartNum; i++) {
+        let currentStudent: any = localData[i];
+        let temp = [];
+        this.chartData.push({
+          name: currentStudent.firstname + " " + currentStudent.lastname,
+          value: currentStudent.points
+        });
+        this.chartData = [...this.chartData];
+      }
+      localData.forEach(user => {
+        this.processedRowData.push({
+          rank: this.processedRowData.length + 1,
+          firstName: user.firstname,
+          lastName: user.lastname,
+          points: user.points,
+        });
+      });
+      this.rows = [...this.processedRowData];
+  }
+
 
   onSelect(event) {
     console.log(event);
