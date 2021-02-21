@@ -4,7 +4,7 @@ This repository contains the front-end for displaying information collected by [
 It uses Angular 10 Material, [ngx-datatable](https://github.com/swimlane/ngx-datatable) and [ngx-charts](https://github.com/swimlane/ngx-charts).
 
 ## How to run it
-You will need Node Package Manager in order to run this. Also, you will need the Angular CLI, which can be installed with the terminal command `npm install -g @angular/cli`. 
+You will need Node Package Manager in order to run this. You will also need the Angular CLI, which can be installed with the terminal command `npm install -g @angular/cli`. 
 After you have cloned this directory, navigate into it and run  `npm install`. Then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 The app will only function if you have disabled Same-origin-policy in your browser. For Chrome, instructions on doing so can be found [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome).
 
