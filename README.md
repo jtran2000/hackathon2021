@@ -1,11 +1,12 @@
 # Discord Chart
-This was created as a project for the hackathon SD Hacks 2021. More information can be found on it [here](https://devpost.com/software/327267). 
-This repository retains the front-end for displaying information collected by [this Discord bot](https://github.com/Sumadhwa13/teamtimtams/tree/master/bot).
+This is part of a project for the hackathon SD Hacks 2021. More information can be found on it [here](https://devpost.com/software/327267). 
+This repository contains the front-end for displaying information collected by [this Discord bot](https://github.com/Sumadhwa13/teamtimtams/tree/master/bot).
+It uses Angular 10 Material, [ngx-datatable](https://github.com/swimlane/ngx-datatable) and [ngx-charts](https://github.com/swimlane/ngx-charts).
 
-## Development Server
+## How to run it
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-This will only work if you have disabled Same-origin-policy in your browser. For Chrome, instructions can be found [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome)
+The app will only function if you have disabled Same-origin-policy in your browser. For Chrome, instructions can be found [here](https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome).
 
 <!--## Code scaffolding
 
